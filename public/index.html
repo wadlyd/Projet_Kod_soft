@@ -2,6 +2,16 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        if (host === "kodprog-site.web.app" || host === "kodprog-site.firebaseapp.com") {
+          window.location.replace(
+            "https://kodprog.com" + window.location.pathname + window.location.search + window.location.hash
+          );
+        }
+      })();
+    </script>
     <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon-kodprog.png" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="any" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +23,7 @@
       content="KODPROG est une agence IT spécialisée en développement sur mesure, analyse de données, pipelines de données et marketing digital, du prototype à l'exploitation en production."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://kodprog-site.web.app/" />
+    <link rel="canonical" href="https://kodprog.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -24,8 +34,8 @@
       property="og:description"
       content="Développement sur mesure, analyse de données, pipelines et marketing digital : une agence IT pour vos projets logiciels, du prototype à la production."
     />
-    <meta property="og:url" content="https://kodprog-site.web.app/" />
-    <meta property="og:image" content="https://kodprog-site.web.app/bannerBg.jpg" />
+    <meta property="og:url" content="https://kodprog.com/" />
+    <meta property="og:image" content="https://kodprog.com/bannerBg.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -34,7 +44,7 @@
       name="twitter:description"
       content="Développement sur mesure, analyse de données, pipelines et marketing digital : une agence IT pour vos projets logiciels, du prototype à la production."
     />
-    <meta name="twitter:image" content="https://kodprog-site.web.app/bannerBg.jpg" />
+    <meta name="twitter:image" content="https://kodprog.com/bannerBg.jpg" />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -49,8 +59,8 @@
         "@type": "ProfessionalService",
         "name": "KODPROG",
         "description": "Agence de développement sur mesure, analyse de données, pipelines de données et marketing digital.",
-        "url": "https://kodprog-site.web.app/",
-        "email": "wadlydugue@gmail.com",
+        "url": "https://kodprog.com/",
+        "email": "kodprogit@gmail.com",
         "sameAs": [
           "https://www.linkedin.com/in/wadlydugue",
           "https://www.instagram.com/kodprog"
