@@ -1,38 +1,21 @@
-.App {
-  text-align: center;
+/* Burger bar animation */
+.burger-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #16a34a;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.burger-btn.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.burger-btn.open span:nth-child(2) {
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.burger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
 }
