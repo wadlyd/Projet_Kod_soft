@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-const ParticlesBackground = () => {
+const ParticlesBackground = ({ className = "w-full h-screen", id = "tsparticles" }) => {
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
     await loadFull(engine);
@@ -15,8 +15,8 @@ const ParticlesBackground = () => {
   return (
     <div className="w-full h-full">
       <Particles
-        className="w-full h-screen"
-        id="tsparticles"
+        className={className}
+        id={id}
         init={particlesInit}
         loaded={particlesLoaded}
         options={{

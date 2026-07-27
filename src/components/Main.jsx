@@ -4,10 +4,12 @@ import Home from "./views/Home";
 import Services from "./views/Services";
 import Vision from "./views/Vision";
 import Footer from "./Footer";
+import Header from "./Header";
 
 function Main() {
   return (
     <div>
+      <Header />
       <Home />
       <About />
       <Vision />
