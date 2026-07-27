@@ -52,10 +52,10 @@ const Footer = () => {
             Contact
           </h4>
           <a
-            href="mailto:wadlydugue@gmail.com"
+            href="mailto:kodprogit@gmail.com"
             className="text-sm hover:text-cyan-400 transition-colors"
           >
-            wadlydugue@gmail.com
+            kodprogit@gmail.com
           </a>
           <div className="flex gap-4 mt-1">
             <a

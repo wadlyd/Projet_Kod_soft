@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kodprog-site.web.app/sitemap.xml
+Sitemap: https://kodprog.com/sitemap.xml
