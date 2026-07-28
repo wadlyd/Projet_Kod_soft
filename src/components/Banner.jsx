@@ -14,7 +14,7 @@ const Banner = () => {
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-400 leading-relaxed text-justify">
           KODPROG conçoit vos applications sur mesure, structure vos données
           et met en place des pipelines fiables - un accompagnement complet,
           du développement à l'exploitation en production.

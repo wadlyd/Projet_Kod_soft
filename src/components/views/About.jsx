@@ -63,14 +63,14 @@ const About = () => {
           <p className="text-xl md:text-2xl font-bold text-cyan-400">
             KODPROG, une agence IT au service de vos données
           </p>
-          <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
+          <p className="text-gray-300 text-lg leading-relaxed text-justify max-w-2xl">
             KODPROG est une agence de développement sur mesure spécialisée en
             data. Nous concevons des logiciels adaptés à vos besoins,
             analysons vos données pour en extraire de la valeur, et
             construisons des pipelines de données fiables, du développement
             jusqu'à l'exploitation en production.
           </p>
-          <p className="text-gray-400 leading-relaxed max-w-2xl">
+          <p className="text-gray-400 leading-relaxed text-justify max-w-2xl">
             Chaque projet est traité avec la même exigence : comprendre le
             besoin avant de coder, structurer la donnée avant de l'exploiter,
             et rester disponible bien après la mise en production.
@@ -89,7 +89,7 @@ const About = () => {
                 </span>
                 {value.title}
               </h4>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed text-justify">
                 {value.description}
               </p>
             </div>

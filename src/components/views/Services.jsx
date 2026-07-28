@@ -128,7 +128,7 @@ const Services = () => {
           <p className="text-xl md:text-2xl font-bold text-cyan-400">
             Une offre structurée autour de quatre expertises
           </p>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+          <p className="text-gray-400 text-lg leading-relaxed text-justify max-w-2xl">
             Développement, analyse de données, pipelines et marketing
             digital : ces expertises sont mobilisables séparément ou
             conjointement, selon l'avancement et les besoins de votre
@@ -159,7 +159,7 @@ const Services = () => {
         >
           <div className="text-cyan-400">{activeService.icon}</div>
           <h4 className="text-xl font-bold">{activeService.title}</h4>
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-gray-400 leading-relaxed text-justify">
             {activeService.description}
           </p>
           <ul className="flex flex-col gap-2 mt-2 pt-4 border-t border-blue-900/60">

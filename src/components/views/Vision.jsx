@@ -31,7 +31,7 @@ const Vision = () => {
         <p className="text-xl md:text-2xl font-bold text-cyan-400">
           Une expertise exigeante, accessible à toutes les entreprises
         </p>
-        <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+        <p className="text-gray-400 text-lg leading-relaxed text-justify max-w-2xl">
           Nous pensons que la rigueur technique et l'exploitation
           intelligente de la donnée ne devraient pas être réservées aux
           grandes structures. Notre vision : proposer un accompagnement de
@@ -50,7 +50,7 @@ const Vision = () => {
             <h4 className="text-xl font-bold text-cyan-400">
               {pillar.title}
             </h4>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed text-justify">
               {pillar.description}
             </p>
           </div>
