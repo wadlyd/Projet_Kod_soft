@@ -1,11 +1,14 @@
 import Main from "./components/Main";
+import { LanguageProvider } from "./context/LanguageContext";
 import "./App.css";
 
 function App() {
   return (
-    <div >
-      <Main />
-    </div>
+    <LanguageProvider>
+      <div>
+        <Main />
+      </div>
+    </LanguageProvider>
   );
 }
 
