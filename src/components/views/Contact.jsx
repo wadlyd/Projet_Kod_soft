@@ -159,7 +159,7 @@ const Contact = () => {
               linkedin.com/in/wadlydugue
             </a>
             <a
-              href="https://www.instagram.com/kodprog"
+              href="https://www.instagram.com/kodprog_it"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-lg hover:text-cyan-400 transition-colors"
@@ -183,7 +183,7 @@ const Contact = () => {
                   d="M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM16.5 7.5h.008v.008h-.008V7.5z"
                 />
               </svg>
-              instagram.com/kodprog
+              instagram.com/kodprog_it
             </a>
           </div>
         </div>
