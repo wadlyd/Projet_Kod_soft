@@ -1,24 +1,9 @@
 import React from "react";
-
-const pillars = [
-  {
-    title: "Accessibilité",
-    description:
-      "Rendre l'expertise technique et data accessible aux PME et indépendants, pas seulement aux grands groupes.",
-  },
-  {
-    title: "Transparence",
-    description:
-      "Un accompagnement clair, sans jargon inutile ni coûts cachés, à chaque étape du projet.",
-  },
-  {
-    title: "Long terme",
-    description:
-      "Construire des relations durables avec nos clients, au-delà de la simple livraison d'un projet.",
-  },
-];
+import { useLanguage } from "../../context/LanguageContext";
 
 const Vision = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="vision"
@@ -26,23 +11,18 @@ const Vision = () => {
     >
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-6 text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide">
-          Notre vision
+          {t.vision.title}
         </h2>
         <p className="text-xl md:text-2xl font-bold text-cyan-400">
-          Une expertise exigeante, accessible à toutes les entreprises
+          {t.vision.tagline}
         </p>
         <p className="text-gray-400 text-lg leading-relaxed text-justify max-w-2xl">
-          Nous pensons que la rigueur technique et l'exploitation
-          intelligente de la donnée ne devraient pas être réservées aux
-          grandes structures. Notre vision : proposer un accompagnement de
-          haut niveau, porté par une organisation légère, pour que chaque
-          entreprise puisse construire des outils solides et piloter ses
-          décisions par la donnée.
+          {t.vision.paragraph}
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-        {pillars.map((pillar) => (
+        {t.vision.pillars.map((pillar) => (
           <div
             key={pillar.title}
             className="flex flex-col items-center text-center gap-3 p-6 rounded-2xl bg-gray-950 border border-blue-900"

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgqavvy";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [status, setStatus] = useState("idle");
 
   const handleSubmit = async (e) => {
@@ -37,40 +39,21 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto flex flex-col gap-12">
         <div className="flex flex-col items-center gap-4 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide">
-            Contact
+            {t.contact.title}
           </h2>
           <p className="text-xl md:text-2xl font-bold text-cyan-400">
-            Discutons de votre projet
+            {t.contact.tagline}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              step: "1",
-              title: "Échange",
-              description:
-                "Un premier échange pour comprendre votre besoin, vos contraintes et vos objectifs.",
-            },
-            {
-              step: "2",
-              title: "Proposition",
-              description:
-                "Une proposition détaillant le périmètre, l'approche technique et les délais.",
-            },
-            {
-              step: "3",
-              title: "Réalisation",
-              description:
-                "Développement, livraison et suivi jusqu'à la mise en production.",
-            },
-          ].map((s) => (
+          {t.contact.steps.map((s, index) => (
             <div
-              key={s.step}
+              key={s.title}
               className="flex flex-col items-center text-center gap-2"
             >
               <span className="text-3xl font-bold text-cyan-400">
-                {s.step}
+                {index + 1}
               </span>
               <h4 className="font-bold">{s.title}</h4>
               <p className="text-gray-400 text-sm leading-relaxed">
@@ -85,20 +68,20 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              placeholder="Nom"
+              placeholder={t.contact.form.namePlaceholder}
               required
               className="bg-black/40 border border-blue-900 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400"
             />
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder={t.contact.form.emailPlaceholder}
               required
               className="bg-black/40 border border-blue-900 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400"
             />
             <textarea
               name="message"
-              placeholder="Votre message"
+              placeholder={t.contact.form.messagePlaceholder}
               rows={5}
               required
               className="bg-black/40 border border-blue-900 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 resize-none"
@@ -108,16 +91,13 @@ const Contact = () => {
               disabled={status === "sending"}
               className="bg-green-600 hover:bg-green-500 transition-colors py-3 px-6 rounded-xl text-base uppercase font-semibold disabled:opacity-50"
             >
-              {status === "sending" ? "Envoi..." : "Envoyer le message"}
+              {status === "sending" ? t.contact.form.submitSending : t.contact.form.submitIdle}
             </button>
             {status === "success" && (
-              <p className="text-cyan-400">Message envoyé, merci !</p>
+              <p className="text-cyan-400">{t.contact.form.successMessage}</p>
             )}
             {status === "error" && (
-              <p className="text-red-400">
-                Une erreur est survenue. Réessayez ou écrivez-nous directement
-                par email.
-              </p>
+              <p className="text-red-400">{t.contact.form.errorMessage}</p>
             )}
           </form>
 

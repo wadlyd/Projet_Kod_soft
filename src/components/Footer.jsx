@@ -1,8 +1,10 @@
 import React from "react";
 import logo from "../assets/kodprog-logo-2-light.png";
+import { useLanguage } from "../context/LanguageContext";
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="w-full bg-black text-gray-400 pt-16 pb-8 px-6 border-t border-blue-900">
@@ -10,46 +12,43 @@ const Footer = () => {
         <div className="flex flex-col gap-2">
           <img src={logo} alt="KODPROG" className="h-[115px] w-auto self-start" />
           <p className="text-sm text-gray-500">
-            Sur mesure. Piloté par la donnée.
+            {t.footer.tagline}
           </p>
         </div>
 
         <div className="flex flex-col gap-3">
           <h4 className="text-cyan-400 uppercase text-sm font-semibold tracking-wide">
-            Services
+            {t.footer.servicesHeading}
           </h4>
-          <a href="#services" className="text-sm hover:text-cyan-400 transition-colors">
-            Développement sur mesure
-          </a>
-          <a href="#services" className="text-sm hover:text-cyan-400 transition-colors">
-            Data Analyst
-          </a>
-          <a href="#services" className="text-sm hover:text-cyan-400 transition-colors">
-            Pipelines de données
-          </a>
-          <a href="#services" className="text-sm hover:text-cyan-400 transition-colors">
-            Marketing Digital
-          </a>
+          {t.services.items.map((service) => (
+            <a
+              key={service.title}
+              href="#services"
+              className="text-sm hover:text-cyan-400 transition-colors"
+            >
+              {service.title}
+            </a>
+          ))}
         </div>
 
         <div className="flex flex-col gap-3">
           <h4 className="text-cyan-400 uppercase text-sm font-semibold tracking-wide">
-            Agence
+            {t.footer.agencyHeading}
           </h4>
           <a href="#about" className="text-sm hover:text-cyan-400 transition-colors">
-            À propos
+            {t.about.eyebrow}
           </a>
           <a href="#vision" className="text-sm hover:text-cyan-400 transition-colors">
-            Notre vision
+            {t.vision.title}
           </a>
           <a href="#contact" className="text-sm hover:text-cyan-400 transition-colors">
-            Contact
+            {t.contact.title}
           </a>
         </div>
 
         <div className="flex flex-col gap-3">
           <h4 className="text-cyan-400 uppercase text-sm font-semibold tracking-wide">
-            Contact
+            {t.footer.contactHeading}
           </h4>
           <a
             href="mailto:kodprogit@gmail.com"
@@ -106,7 +105,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-blue-900/60 text-sm text-center">
-        © {year} KODPROG. Tous droits réservés.
+        © {year} KODPROG. {t.footer.rights}
       </div>
     </footer>
   );

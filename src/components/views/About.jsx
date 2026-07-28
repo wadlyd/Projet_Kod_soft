@@ -1,30 +1,19 @@
 import React from "react";
+import { useLanguage } from "../../context/LanguageContext";
 
-const values = [
-  {
-    title: "Sur mesure",
-    symbol: "○",
-    symbolColor: "text-red-400",
-    description:
-      "Pas de solution générique : chaque projet est pensé et développé pour vos besoins et vos contraintes spécifiques.",
-  },
-  {
-    title: "Data-driven",
-    symbol: "□",
-    symbolColor: "text-pink-400",
-    description:
-      "Vos décisions s'appuient sur des données propres, structurées et exploitables, pas sur des intuitions.",
-  },
-  {
-    title: "De bout en bout",
-    symbol: "△",
-    symbolColor: "text-green-400",
-    description:
-      "Du développement initial à l'exploitation en production, un seul interlocuteur suit votre projet jusqu'au bout.",
-  },
+const valueStyles = [
+  { symbol: "○", symbolColor: "text-red-400" },
+  { symbol: "□", symbolColor: "text-pink-400" },
+  { symbol: "△", symbolColor: "text-green-400" },
 ];
 
 const About = () => {
+  const { t } = useLanguage();
+  const values = t.about.values.map((value, index) => ({
+    ...value,
+    ...valueStyles[index],
+  }));
+
   return (
     <section
       id="about"
@@ -58,22 +47,16 @@ const About = () => {
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-14">
         <div className="flex flex-col items-center gap-4 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide">
-            À propos
+            {t.about.eyebrow}
           </h2>
           <p className="text-xl md:text-2xl font-bold text-cyan-400">
-            KODPROG, une agence IT au service de vos données
+            {t.about.tagline}
           </p>
           <p className="text-gray-300 text-lg leading-relaxed text-justify max-w-2xl">
-            KODPROG est une agence de développement sur mesure spécialisée en
-            data. Nous concevons des logiciels adaptés à vos besoins,
-            analysons vos données pour en extraire de la valeur, et
-            construisons des pipelines de données fiables, du développement
-            jusqu'à l'exploitation en production.
+            {t.about.paragraph1}
           </p>
           <p className="text-gray-400 leading-relaxed text-justify max-w-2xl">
-            Chaque projet est traité avec la même exigence : comprendre le
-            besoin avant de coder, structurer la donnée avant de l'exploiter,
-            et rester disponible bien après la mise en production.
+            {t.about.paragraph2}
           </p>
         </div>
 
