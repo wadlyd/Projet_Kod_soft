@@ -46,10 +46,11 @@ const Header = () => {
           </ul>
           <div>
             <a
-              href="mailto:kodprogit@gmail.com"
+              href="#contact"
+              onClick={handleLinkClick}
               className="inline-block bg-green-600 hover:bg-green-500 transition-colors py-1 px-6 rounded-xl text-base uppercase font-semibold"
             >
-              Send me an Email
+              Send an Email
             </a>
           </div>
         </div>

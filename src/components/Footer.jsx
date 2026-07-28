@@ -75,7 +75,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/kodprog"
+              href="https://www.instagram.com/kodprog_it"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
