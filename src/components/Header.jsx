@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-banner-bg bg-cover bg-center border-b-[1px] border-b-blue-600 overflow-hidden">
+    <header className="fixed top-0 inset-x-0 z-50 bg-banner-bg bg-cover bg-center border-b-[1px] border-b-blue-600">
       <div className="absolute inset-0 z-0">
         <ParticlesBackground className="w-full h-24 md:h-28" id="tsparticles-header" />
       </div>
