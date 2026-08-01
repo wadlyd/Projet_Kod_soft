@@ -9,9 +9,17 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("sending");
     const form = e.target;
     const data = new FormData(form);
+
+    // Honeypot: real visitors never fill this hidden field, bots often do.
+    if (data.get("_gotcha")) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
+    setStatus("sending");
 
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -65,6 +73,14 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <input
+              type="text"
+              name="_gotcha"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute -left-[9999px] w-px h-px opacity-0"
+            />
             <input
               type="text"
               name="name"
