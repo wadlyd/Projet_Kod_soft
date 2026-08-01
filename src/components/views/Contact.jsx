@@ -9,9 +9,17 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("sending");
     const form = e.target;
     const data = new FormData(form);
+
+    // Honeypot: real visitors never fill this hidden field, bots often do.
+    if (data.get("_gotcha")) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
+    setStatus("sending");
 
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -67,6 +75,14 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
+              name="_gotcha"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute -left-[9999px] w-px h-px opacity-0"
+            />
+            <input
+              type="text"
               name="name"
               placeholder={t.contact.form.namePlaceholder}
               required
@@ -103,7 +119,7 @@ const Contact = () => {
 
           <div className="flex flex-col gap-6 justify-center">
             <a
-              href="mailto:kodprogit@gmail.com"
+              href="mailto:info@kodprog.com"
               className="flex items-center gap-3 text-lg hover:text-cyan-400 transition-colors"
             >
               <svg
@@ -120,7 +136,7 @@ const Contact = () => {
                   d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                 />
               </svg>
-              kodprogit@gmail.com
+              info@kodprog.com
             </a>
             <a
               href="https://www.linkedin.com/in/wadlydugue"
